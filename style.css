@@ -17,17 +17,54 @@ ul, ol {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 1200px; 
     margin: 0 auto;
 }
 
-.header-nav {
+.button {
     position: relative;
+    padding: 11px 32px;
+    border: none;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.button::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 63%;
+    height: 100%;
+    background-color: #F13F3F;
+    z-index: -1;
+    transition: width .3s ease;
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+/* HEADER START */
+
+.header-nav__wrap {
+    position: relative;
+}
+
+.header-nav {
+    position: fixed;
+    max-width: 1200px;
+    width: 100%;
     padding: 22px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 2;
 }
 
 .nav-button {
@@ -144,4 +181,107 @@ ul, ol {
 
 .nav-link:hover {
     color: #f13f3f;
+}
+
+/* END HEADER */
+
+/* START PROMO */
+
+.promo {
+    padding: 200px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-bg {
+    background-image: url('./images/slide-5-1-1920x880.jpg');
+    background-size: cover;
+    background-position-x: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+    transform: scale(1.08);
+    transform-origin: 0 0;
+    transition: transform 8.5s ease;
+}
+
+.promo-bg.active {
+    background-position-x: right;
+    transform: scale(1);
+}
+
+.promo-content {
+    max-width: 44%;
+}
+
+.text-accent {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.tex-accent__red {
+    display: block;
+    font-family: 'Inter';
+    color: #F13F3F;
+    font-weight: 800;
+    font-size: 72px;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    line-height: 1;
+}
+
+.tex-accent__rebel {
+    display: block;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 157px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-left: -105px;
+    line-height: 1;
+}
+
+.heading-1 {
+    font-family: 'Inter';
+    font-size: 60px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    text-align: right;
+    color: #ffffff;
+}
+
+.promo-description {
+    margin-top: 25px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.promo-contacts {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.promo-contancts__title {
+    color: #f13f3f;
+    padding: 0 2px;
+}
+
+.promo-contancts__source {
+    color: #FFF;
+    padding: 0 2px;
 }
