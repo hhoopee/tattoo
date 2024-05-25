@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #9b9b9b;
+    background: url('./images/body-bg.jpg');
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.header-nav {
+    position: relative;
+    padding: 22px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-button {
+    width: 40px;
+    height: 24px;
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    border: none;
+    background-color: transparent;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.nav-button.active .button-line:after{
+    transform: rotate(135deg);
+    width: 38px;
+    top: -8px;
+}
+.nav-button.active .button-line::before{
+    transform: rotate(225deg);
+    width: 38px;
+    top: -8px;
+}
+.nav-button.active .button-line{
+    background: transparent;
+
+}
+
+.navbar-main-element {
+    display: none;
+}
+
+.button-line,
+.button-line:after,
+.button-line:before {
+    position: absolute;
+    height: 2px;
+    left: 0;
+    background: #f13f3f;
+    transform: rotate(180deg);
+}
+
+.button-line {
+    top: 3px;
+    width: 38px;
+    display: inline-block;
+    transition: background .3s ease;
+}
+
+.button-line:after {
+    content: "";
+    width: 32px;
+    top: -8px;
+	transition: .5s all ease;
+}
+
+.button-line:before {
+    content: "";
+    width: 26px;
+    top: -16px;
+	transition: .3s all ease;
+}
+
+.nav-button:hover .button-line:after,
+.nav-button:hover .button-line:before {
+    width: 38px;
+}
+
+.nav-wrap {
+    background: #202020;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.45);
+    width: 330px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: all .3s ease;
+    padding-top: 125px;
+}
+
+.nav-wrap.active {
+    right: 0;
+    transform: translateX(0);
+}
+
+@media (min-width: 1200px) {
+    .nav-wrap.active {
+        right: calc((100% - 1200px) / 2);
+        transform: translateX(0);
+    }
+}
+
+.nav-item {
+    position: relative;
+    display: block;
+    padding: 19px 30px 19px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-link {
+    font-family: 'Montserrat';
+    line-height: 1.4;
+    text-transform: none;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+
+    transition: color .3s ease .1s;
+}
+
+.nav-link:hover {
+    color: #f13f3f;
+}
