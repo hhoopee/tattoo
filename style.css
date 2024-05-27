@@ -50,6 +50,25 @@ a {
     width: 100%;
 }
 
+.heading-2 {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    font-size: 48px;
+    line-height: 1.25;
+    grid-row: 700;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.heading-2::before {
+    position: absolute;
+    content: '';
+    border-left: 1px solid #f13f3f;
+    height: 35px;
+    top: 12px;
+    left: -25px;
+}
+
 /* HEADER START */
 
 .header-nav__wrap {
@@ -209,7 +228,7 @@ a {
 }
 
 .promo-bg.active {
-    background-position-x: right;
+    /* background-position-x: right; */
     transform: scale(1);
 }
 
@@ -284,4 +303,148 @@ a {
 .promo-contancts__source {
     color: #FFF;
     padding: 0 2px;
+}
+
+/* END PROMO */
+
+/* START ABOUT */
+
+.about {
+    padding: 115px 0;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-content__column-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-content__column-1 {
+    max-width: 50%;
+    width: 100%;
+    padding: 0 15px;
+    flex: 0 0 50%;
+    position: relative;
+}
+
+.column-1__img-containers {
+    display: flex;
+}
+
+.parallax-container-2 {
+    /* transform: translateY(40px); */
+}
+
+.parallax-container {
+    width: 100%;
+    position: relative;
+    padding: 0 15px;
+    transition: transform 5s ease;
+}
+
+.parallax-container img {
+    width: 100%;
+}
+
+.column-1__text {
+    font-family: 'Montserrat';
+    position: absolute;
+    bottom: 0;
+    right: -110px;
+    transform: rotate(-90deg);
+    font-size: 21px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.about-content__column-2 {
+    max-width: 41.6%;
+    padding: 0 15px;
+}
+
+.about-content__text-big {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #FFF;
+    margin-top: 40px;
+}
+
+.about-content__small-big {
+    margin-top: 20px;
+}
+
+.about-content__img-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+/* END ABOUT */
+
+/* START SKILLS */
+
+.skills {
+    padding: 115px 0;
+    margin-bottom: 500px;
+}
+
+.skills-container {
+    padding-left: 30px;
+    display: flex;
+}
+
+.skills-content {
+    flex: 0 0 58%;
+}
+
+.skills-cards {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+    gap: 20px;
+}
+
+.skills-card {
+    max-width: 300px;
+}
+
+.card-title__container {
+    display: flex;
+    align-items: center;
+}
+
+.card-title {
+    margin-left: 20px;
+    color: #FFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.card-text {
+    margin-top: 22px;
+}
+
+.skills-bg {
+    flex: 0 0 42%;
+}
+
+.skills-bg__img-container {
+    position: relative;
+    width: 100%;
+}
+
+.skills-bg__img {
+    position: absolute;
+    transform: translateY(-25%);
+    right: -80px;
+    max-width: 100%;
+    height: auto;
 }
