@@ -584,3 +584,82 @@ a {
     font-weight: 700;
     line-height: 1.25; 
 }
+
+/* END TESTIMONIALS */
+
+/* START GALLERY */
+
+.gallery {
+    padding-bottom: 115px;
+}
+
+.gallery-title__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.gallery-link {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: #FFF;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: all .3s ease;
+}
+
+.gallery-link__container {
+    display: flex;
+    align-items: center;
+}
+
+.gallery-link__container i {
+    display: inline-block;
+    color: #F13F3F;
+    margin-left: 10px;
+    transition: all .3s ease;
+}
+
+.gallery-link__container:hover i {
+    transform: rotateX(180deg);
+}
+
+.gallery-link__container:hover .gallery-link{
+    color: #F13F3F;
+    transform: translateX(-5px);
+}
+
+.gallery-slider {
+    margin-top: 30px;
+}
+
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font: 400 46px / 50px 'FontAwesome';
+    color: #cccccc;
+    cursor: pointer;
+}
+
+.owl-prev i {
+    font-size: 20px;
+    color: #FFF;
+}
+
+.owl-next i {
+    font-size: 20px;
+    color: #FFF;
+}
+
+.owl-next {
+    right: 10px;
+}
+
+.owl-prev {
+    left: 10px;
+}

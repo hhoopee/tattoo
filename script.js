@@ -6,7 +6,6 @@ const aboutSection = document.querySelector(".about-content__column-1");
 const paralaxContainer1 = document.querySelector(".parallax-container-1");
 const paralaxContainer2 = document.querySelector(".parallax-container-2");
 
-console.log(aboutSection);
 
 window.addEventListener("load", () => {
   promoBg.classList.add("active");
@@ -37,3 +36,27 @@ function scroll() {
   }
 
 }
+
+const slides = document.querySelectorAll('.gallery-slide');
+
+slides.forEach(slide => {
+  lightGallery(slide, {
+    download: false,
+  });
+})
+
+$(document).ready(function () {
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    smartSpeed: 2000,
+    autoplayTimeout:5000,
+    autoplayHoverPause: true,
+    autoplay: true,
+    nav: true,
+    dots: false,
+    items: 3,
+    navClass: ["owl-prev", "owl-next"],
+    navText: ["<i class='fa-solid fa-arrow-left'></i>", "<i class='fa-solid fa-arrow-right'></i>"],
+  });
+});
+
