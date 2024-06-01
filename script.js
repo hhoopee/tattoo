@@ -52,7 +52,9 @@ carousels.forEach((carousel) => {
   const dataSmItems = carousel.getAttribute("data-sm-items");
   const dataSmartSpeed = carousel.getAttribute("data-smart-speed");
   const dataAutoplayTimeout = carousel.getAttribute("data-autoplay-timeout");
-  const dataAutoplayHoverPause = carousel.getAttribute("data-autoplay-hoverpause");
+  const dataAutoplayHoverPause = carousel.getAttribute(
+    "data-autoplay-hoverpause"
+  );
   const dataMouseDrag = carousel.getAttribute("data-mouse-drag");
   const dataNav = carousel.getAttribute("data-nav");
   const dataDots = carousel.getAttribute("data-dots");
@@ -74,3 +76,32 @@ carousels.forEach((carousel) => {
   });
 });
 
+const inputWraps = document.querySelectorAll(".input-wrap");
+
+const inputs = document.querySelectorAll('.input');
+console.log(inputs)
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+inputs.forEach((input, index) => {
+  input.addEventListener("focusin", () => {
+    inputWraps[index].querySelector(".form-label").classList.add('active');
+  })
+  input.addEventListener("focusout", () => {
+    if(input.classList.contains("input-email") && input.value === '') {
+      inputWraps[index].querySelector(".form-validator").innerText = "The text field is required.";
+      inputWraps[index].classList.add("form-error");
+      inputWraps[index].querySelector(".form-label").classList.remove('active');
+    } else if (input.value === "") {
+      inputWraps[index].classList.add("form-error");
+      inputWraps[index].querySelector(".form-label").classList.remove('active');
+    } else {
+      inputWraps[index].classList.remove("form-error");
+      if (input.classList.contains("input-email")) {
+        if (!EMAIL_REGEXP.test(input.value) && input.value !== '') {
+          inputWraps[index].querySelector(".form-validator").innerText = "Invalid email.";
+          inputWraps[index].classList.add("form-error");
+        }
+      }
+    }
+  })
+})

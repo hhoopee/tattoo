@@ -28,12 +28,15 @@ a {
 }
 
 .button {
+    font-family: "Montserrat";
+    font-weight: 500;
     position: relative;
     display: inline-block;
     padding: 11px 32px;
     border: none;
     text-transform: uppercase;
     color: #FFF;
+    user-select: none;
 }
 
 .button::before {
@@ -676,4 +679,124 @@ a {
 
 .owl-prev {
     left: 10px;
+}
+
+/* END GALLERY */
+
+/* START TOUCH */
+.touch {
+    padding-bottom: 115px;
+}
+
+.touch-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.touch-content__second-block {
+    max-width: 470px;
+}
+
+.touch-content__second-block p {
+    margin-top: 12px;
+}
+
+.touch-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input {
+    display: block;
+    outline: none;
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 19px 12px 50px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #a1a1a1;
+    background-color: transparent;
+    background-image: none;
+    border-radius: 0;
+    appearance: none;
+    transition: .3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-wrap.form-error .input{
+    border-color:#F13F3F
+}
+
+.input-wrap.form-error .form-validator {
+    display: block;
+}
+
+.form-validator {
+    position: absolute;
+    display: none;
+    right: 20px;
+    top: 2px;
+    z-index: 9;
+    margin-top: 2px;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0;
+    color: #f5543f;
+    transition: .3s;
+}
+
+.form-label {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    padding-left: 19px;
+    padding-right: 19px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    pointer-events: none;
+    text-align: left;
+    z-index: 9;
+    transition: .25s;
+    will-change: transform;
+    transform: translateY(-50%);
+}
+
+.form-label.active {
+    display: none;
+}
+
+/* .input:focus + .form-label {
+    display: none;
+} */
+
+.input-wrap i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #F13F3F;
+    pointer-events: none;
+}
+
+.textarea-wrap textarea{
+    height: 135px;
+}
+
+.input-wrap.textarea-wrap i {
+    top: 25px;
+}
+
+.button-form {
+    background-color: transparent;
+    cursor: pointer;
 }
