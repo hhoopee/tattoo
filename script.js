@@ -6,6 +6,8 @@ const aboutSection = document.querySelector(".about-content__column-1");
 const paralaxContainer1 = document.querySelector(".parallax-container-1");
 const paralaxContainer2 = document.querySelector(".parallax-container-2");
 
+const header = document.querySelector('.header');
+
 window.addEventListener("load", () => {
   promoBg.classList.add("active");
 });
@@ -15,7 +17,11 @@ navButton.addEventListener("click", () => {
   navButton.classList.toggle("active");
 });
 
-window.addEventListener("scroll", scroll);
+window.addEventListener("scroll", () => {
+  window.scrollY > 100 ? header.classList.add("scrolling") : header.classList.remove("scrolling");
+  scroll();
+
+});
 scroll();
 
 function scroll() {
@@ -78,30 +84,33 @@ carousels.forEach((carousel) => {
 
 const inputWraps = document.querySelectorAll(".input-wrap");
 
-const inputs = document.querySelectorAll('.input');
-console.log(inputs)
-const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+const inputs = document.querySelectorAll(".input");
+console.log(inputs);
+const EMAIL_REGEXP =
+  /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
 inputs.forEach((input, index) => {
   input.addEventListener("focusin", () => {
-    inputWraps[index].querySelector(".form-label").classList.add('active');
-  })
+    inputWraps[index].querySelector(".form-label").classList.add("active");
+  });
   input.addEventListener("focusout", () => {
-    if(input.classList.contains("input-email") && input.value === '') {
-      inputWraps[index].querySelector(".form-validator").innerText = "The text field is required.";
+    if (input.classList.contains("input-email") && input.value === "") {
+      inputWraps[index].querySelector(".form-validator").innerText =
+        "The text field is required.";
       inputWraps[index].classList.add("form-error");
-      inputWraps[index].querySelector(".form-label").classList.remove('active');
+      inputWraps[index].querySelector(".form-label").classList.remove("active");
     } else if (input.value === "") {
       inputWraps[index].classList.add("form-error");
-      inputWraps[index].querySelector(".form-label").classList.remove('active');
+      inputWraps[index].querySelector(".form-label").classList.remove("active");
     } else {
       inputWraps[index].classList.remove("form-error");
       if (input.classList.contains("input-email")) {
-        if (!EMAIL_REGEXP.test(input.value) && input.value !== '') {
-          inputWraps[index].querySelector(".form-validator").innerText = "Invalid email.";
+        if (!EMAIL_REGEXP.test(input.value) && input.value !== "") {
+          inputWraps[index].querySelector(".form-validator").innerText =
+            "Invalid email.";
           inputWraps[index].classList.add("form-error");
         }
       }
     }
-  })
-})
+  });
+});
