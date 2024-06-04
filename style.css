@@ -913,6 +913,15 @@
         padding-left: 0;
     }
 
+    .skills-card {
+        max-width: 80%;
+    }
+
+    .about-content__column-2 {
+        padding: 0;
+        max-width: 100%;
+    }
+
     .skills,
     .staff,
     .testimonials,
