@@ -79,6 +79,18 @@ carousels.forEach((carousel) => {
       "<i class='fa-solid fa-arrow-left'></i>",
       "<i class='fa-solid fa-arrow-right'></i>",
     ],
+    responsive: {
+      0 : {
+        items: dataSmItems,
+        center: true,
+      },
+      600 : {
+        items: dataMdItems,
+      }, 
+      960 : {
+        items: dataLgItems,
+      }
+    },
   });
 });
 

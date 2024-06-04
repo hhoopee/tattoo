@@ -18,6 +18,7 @@ body {
     font-weight: 400;
     color: var(--color-gray);
     background: url('./images/body-bg.jpg');
+    overflow-x: hidden;
 }
 
 ul,
@@ -79,7 +80,7 @@ a {
     font-family: "Montserrat", sans-serif;
     font-size: 48px;
     line-height: 1.25;
-    grid-row: 700;
+    font-weight: 700;
     color: var(--color-white);
     text-transform: uppercase;
 }
@@ -103,3 +104,55 @@ a {
 }
 
 
+@media (max-width: 1199px) {
+
+    .container {
+        max-width: 960px;
+    }
+
+    .header .container {
+        max-width: 1200px;
+    }
+    .heading-1 {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .heading-2 {
+        font-size: 28px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 960px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .heading-2::before {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .button {
+        padding: 10px 15px;
+    }
+
+    .owl-item {
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
